@@ -42,6 +42,20 @@ const UserAppAppstore = async (page, locator) => {
     return newPage;
 }
 
+const CollectorAppAppstore = async (page, locator) => {
+
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        locator.click()
+    ])
+    const newPageUrl = newPage.url();
+    expect(newPageUrl).toBe("https://apps.apple.com/us/app/kivilabs-collector/id6743615473");
+    const trustpilotLocator = newPage.locator("//header/h1[1]");
+    const verifytext = await trustpilotLocator.textContent();
+    expect(verifytext).toContain('KiviLabs Collector');
+    return newPage;
+}
+
 const AdminPanelVerify = async (page, locator) => {
 
     const [newPage] = await Promise.all([
@@ -94,4 +108,4 @@ const EnvantoKivilabVerify = async (page, locator) => {
     return newPage;
 }
 
-module.exports = { UserAppPlaystore, AdminPanelVerify, TrustpilotVerify, EnvantoVerify, EnvantoKivilabVerify, UserAppAppstore ,CollectorAppPlaystore}
+module.exports = { UserAppPlaystore, AdminPanelVerify, TrustpilotVerify, EnvantoVerify, EnvantoKivilabVerify, UserAppAppstore, CollectorAppPlaystore, CollectorAppAppstore }
