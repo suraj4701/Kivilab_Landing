@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
-test("Customer app Admin Panel Verify", async ({ page }) => {
+test("Customer app Buy now", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();

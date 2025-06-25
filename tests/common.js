@@ -14,6 +14,20 @@ const UserAppPlaystore = async (page, locator) => {
     return newPage;
 }
 
+const CollectorAppPlaystore = async (page, locator) => {
+
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        locator.click()
+    ])
+    const newPageUrl = newPage.url();
+    expect(newPageUrl).toBe("https://play.google.com/store/apps/details?id=com.iqonic.kivilabs.collector&hl=en_IN");
+    const trustpilotLocator = newPage.locator("//span[contains(text(),'KiviLabs: Collector App')]");
+    const verifytext = await trustpilotLocator.textContent();
+    expect(verifytext).toContain('KiviLabs: Collector App');
+    return newPage;
+}
+
 const UserAppAppstore = async (page, locator) => {
 
     const [newPage] = await Promise.all([
@@ -80,4 +94,4 @@ const EnvantoKivilabVerify = async (page, locator) => {
     return newPage;
 }
 
-module.exports = { UserAppPlaystore, AdminPanelVerify, TrustpilotVerify, EnvantoVerify, EnvantoKivilabVerify, UserAppAppstore }
+module.exports = { UserAppPlaystore, AdminPanelVerify, TrustpilotVerify, EnvantoVerify, EnvantoKivilabVerify, UserAppAppstore ,CollectorAppPlaystore}
