@@ -69,7 +69,7 @@ test("More Explore Now User App Playstore", async ({ page }) => {
         Docs.click()
     ])
 
-    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/a[1]");
     await UserAppPlaystore(newPage, adminpanelLocator);
 })
 
@@ -82,7 +82,7 @@ test("More Explore Now User App Appstore", async ({ page }) => {
         Docs.click()
     ])
 
-    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[1]/a[1]");
+    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[1]/a[1]");
     await UserAppAppstore(newPage, adminpanelLocator);
 })
 
@@ -96,7 +96,7 @@ test("More Explore Now Collector App Playstore", async ({ page }) => {
         Docs.click()
     ])
 
-    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[3]/div[1]/div[1]/div[1]/a[1]");
     await CollectorAppPlaystore(newPage, adminpanelLocator);
 })
 
@@ -109,7 +109,7 @@ test("More Explore Now Collector App Appstore", async ({ page }) => {
         Docs.click()
     ])
 
-    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[3]/div[1]/div[2]/div[1]/a[1]");
+    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[1]/div[3]/div[1]/div[2]/div[1]/a[1]");
     await CollectorAppAppstore(newPage, adminpanelLocator);
 })
 
@@ -122,7 +122,7 @@ test("More Explore Now AdminPanel", async ({ page }) => {
         Docs.click()
     ])
 
-    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/a[1]");
     await AdminPanelVerify(newPage, adminpanelLocator);
 })
 
@@ -136,7 +136,7 @@ test("More Explore Now ContactUs", async ({ page }) => {
         Docs.click()
     ])
 
-    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[3]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[2]/div[3]/div[1]/div[1]/div[1]/a[1]");
 
     const [newPage1] = await Promise.all([
         newPage.context().waitForEvent('page'),

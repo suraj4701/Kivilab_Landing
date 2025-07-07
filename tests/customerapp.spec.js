@@ -38,7 +38,7 @@ test("Customer app Kivilab", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();
-    const LinkLocator = page.locator("//a[contains(text(),'KiviLab')]");
+    const LinkLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/p[1]/a[1]");
     await LinkLocator.scrollIntoViewIfNeeded();
 
     const [newPage] = await Promise.all([
@@ -54,7 +54,7 @@ test("Customer app View Demo", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();
-    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await UserAppPlaystore(page, adminpanelLocator);
 })
 
@@ -62,7 +62,7 @@ test("Customer app View Demo 2", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();
-    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[5]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[6]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await UserAppPlaystore(page, adminpanelLocator);
 })
 
@@ -70,7 +70,7 @@ test("Customer app View Demo 3", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();
-    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await UserAppPlaystore(page, adminpanelLocator);
 })
 
@@ -78,7 +78,7 @@ test("Customer app View Demo 4", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();
-    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[7]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[8]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await UserAppPlaystore(page, adminpanelLocator);
 })
 
@@ -86,7 +86,7 @@ test("Customer app View Demo 5", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();
-    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[9]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await UserAppPlaystore(page, adminpanelLocator);
 })
 
@@ -94,7 +94,7 @@ test("Customer app View Demo 6", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();
-    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[9]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[10]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await UserAppPlaystore(page, adminpanelLocator);
 })
 
@@ -102,6 +102,6 @@ test("Customer app View Demo 7", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-834']").click();
-    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[11]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await UserAppPlaystore(page, adminpanelLocator);
 })

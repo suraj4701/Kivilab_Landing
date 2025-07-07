@@ -58,14 +58,14 @@ test("Home Explore Admin Panel", async ({ page }) => {
 
 test("Home Buy now", async ({ page }) => {
     await page.goto(home_url);
-    const EnvantoKivicareVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[9]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const EnvantoKivicareVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[11]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await EnvantoKivicareVerifyLocator.scrollIntoViewIfNeeded();
     await EnvantoKivilabVerify(page, EnvantoKivicareVerifyLocator);
 })
 
 test("Home Buy now 2", async ({ page }) => {
     await page.goto(home_url);
-    const EnvantoKivicareVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[10]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const EnvantoKivicareVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[12]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await EnvantoKivicareVerifyLocator.scrollIntoViewIfNeeded();
     await EnvantoKivilabVerify(page, EnvantoKivicareVerifyLocator);
 })
@@ -107,7 +107,7 @@ test("Home Try Demo", async ({ page }) => {
 
 test("Home Buy now 4", async ({ page }) => {
     await page.goto(home_url);
-    const EnvantoKivicareVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[13]/div[1]/div[1]/div[1]/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]");
+    const EnvantoKivicareVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[16]/div[1]/div[1]/div[1]/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]");
     await EnvantoKivicareVerifyLocator.scrollIntoViewIfNeeded();
     await EnvantoKivilabVerify(page, EnvantoKivicareVerifyLocator);
 })

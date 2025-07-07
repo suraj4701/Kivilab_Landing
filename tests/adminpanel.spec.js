@@ -38,7 +38,7 @@ test("AdminPanel View Demo 2", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -47,7 +47,7 @@ test("AdminPanel View Demo 3", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[4]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[5]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -56,7 +56,7 @@ test("AdminPanel View Demo 4", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -65,7 +65,7 @@ test("AdminPanel View Demo 5", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[6]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[7]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -90,7 +90,7 @@ test("AdminPanel View Demo 6", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[8]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -99,7 +99,7 @@ test("AdminPanel View Demo 7", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[8]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[9]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -108,7 +108,7 @@ test("AdminPanel View Demo 8", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[9]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[10]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -117,7 +117,7 @@ test("AdminPanel View Demo 9", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[10]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[11]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -126,7 +126,7 @@ test("AdminPanel View Demo 10", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[11]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[12]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -135,7 +135,7 @@ test("AdminPanel View Demo 11", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[12]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[13]/div[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
@@ -144,7 +144,7 @@ test("AdminPanel View Demo 12", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-832']").click();
-    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[13]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    const Locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[14]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await Locator.scrollIntoViewIfNeeded();
     await AdminPanelVerify(page, Locator);
 })
