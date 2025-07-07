@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppPlaystore } from './common';
+import { BookcallVerify, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
 test("Customer app Buy now", async ({ page }) => {
@@ -32,6 +32,22 @@ test("Customer app Envanto Verify", async ({ page }) => {
     await page.locator("//li[@id='menu-item-834']").click();
     const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/a[1]");
     await EnvantoVerify(page, EnvantoVerifyLocator);
+})
+
+test("Customer app Book a quick call", async ({ page }) => {
+    await page.goto(home_url);
+    await page.locator("//li[@id='menu-item-831']").hover()
+    await page.locator("//li[@id='menu-item-834']").click();
+    const EnvantoVerifyLocator = page.locator("//a[contains(text(),'Book a quick call.')]");
+    await BookcallVerify(page, EnvantoVerifyLocator);
+})
+
+test("Customer app Book a quick call 2", async ({ page }) => {
+    await page.goto(home_url);
+    await page.locator("//li[@id='menu-item-831']").hover()
+    await page.locator("//li[@id='menu-item-834']").click();
+    const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    await BookcallVerify(page, EnvantoVerifyLocator);
 })
 
 test("Customer app Kivilab", async ({ page }) => {

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { AdminPanelVerify, CollectorAppAppstore, CollectorAppPlaystore, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore, UserAppPlaystore } from './common';
+import { AdminPanelVerify, BookcallVerify, CollectorAppAppstore, CollectorAppPlaystore, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
 test("More Docs", async ({ page }) => {
@@ -23,7 +23,7 @@ test("More Book Demo Call", async ({ page }) => {
         Docs.click()
     ])
     const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://tidycal.com/iqonicdesign/kivicare-laravel-app");
+    expect(newPageUrl).toBe("https://tidycal.com/iqonicdesign/kivilabs-demo-call");
 })
 
 test("Customer app Trustpilot Verify", async ({ page }) => {
@@ -58,6 +58,19 @@ test("More Explore Now Envanto Verify", async ({ page }) => {
 
     const EnvantoVerifyLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/a[1]");
     await EnvantoVerify(newPage, EnvantoVerifyLocator);
+})
+
+test.only("More Explore Now Book a quick call", async ({ page }) => {
+    await page.goto(home_url);
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        Docs.click()
+    ])
+
+    const EnvantoVerifyLocator = newPage.locator("//a[contains(text(),'Book a quick call.')]");
+    await BookcallVerify(newPage, EnvantoVerifyLocator);
 })
 
 test("More Explore Now User App Playstore", async ({ page }) => {

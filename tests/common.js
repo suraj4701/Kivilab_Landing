@@ -108,4 +108,15 @@ const EnvantoKivilabVerify = async (page, locator) => {
     return newPage;
 }
 
-module.exports = { UserAppPlaystore, AdminPanelVerify, TrustpilotVerify, EnvantoVerify, EnvantoKivilabVerify, UserAppAppstore, CollectorAppPlaystore, CollectorAppAppstore }
+const BookcallVerify = async (page, locator) => {
+
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        locator.click()
+    ])
+    const newPageUrl = newPage.url();
+    expect(newPageUrl).toBe("https://tidycal.com/iqonicdesign/kivilabs-demo-call");
+    return newPage;
+}
+
+module.exports = { UserAppPlaystore, AdminPanelVerify, BookcallVerify, TrustpilotVerify, EnvantoVerify, EnvantoKivilabVerify, UserAppAppstore, CollectorAppPlaystore, CollectorAppAppstore }

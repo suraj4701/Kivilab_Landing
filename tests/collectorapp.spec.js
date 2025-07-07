@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { CollectorAppPlaystore, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify } from './common';
+import { BookcallVerify, CollectorAppPlaystore, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify } from './common';
 const home_url = process.env.HOME_URL;
 
 test("Collector app Buy Now", async ({ page }) => {
@@ -18,7 +18,7 @@ test("Collector app View Demo", async ({ page }) => {
     await CollectorAppPlaystore(page, adminpanelLocator);
 })
 
-test("Customer app Trustpilot Verify", async ({ page }) => {
+test("Collector app Trustpilot Verify", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-833']").click();
@@ -26,12 +26,28 @@ test("Customer app Trustpilot Verify", async ({ page }) => {
     await TrustpilotVerify(page, TrustpilotVerifyLocator);
 })
 
-test("Customer app Envanto Verify", async ({ page }) => {
+test("Collector app Envanto Verify", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-831']").hover()
     await page.locator("//li[@id='menu-item-833']").click();
     const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/a[1]");
     await EnvantoVerify(page, EnvantoVerifyLocator);
+})
+
+test("Collector app Book a quick call", async ({ page }) => {
+    await page.goto(home_url);
+    await page.locator("//li[@id='menu-item-831']").hover()
+    await page.locator("//li[@id='menu-item-833']").click();
+    const EnvantoVerifyLocator = page.locator("//a[contains(text(),'Book a quick call.')]");
+    await BookcallVerify(page, EnvantoVerifyLocator);
+})
+
+test("Collector app Book a quick call 2", async ({ page }) => {
+    await page.goto(home_url);
+    await page.locator("//li[@id='menu-item-831']").hover()
+    await page.locator("//li[@id='menu-item-833']").click();
+    const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    await BookcallVerify(page, EnvantoVerifyLocator);
 })
 
 test("Collector app View Demo 2", async ({ page }) => {

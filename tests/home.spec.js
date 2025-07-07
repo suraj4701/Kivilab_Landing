@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { AdminPanelVerify, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppPlaystore } from './common';
+import { AdminPanelVerify, BookcallVerify, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
 test("Home User App Playstore", async ({ page }) => {
@@ -24,6 +24,12 @@ test("Home Envanto Verify", async ({ page }) => {
     await page.goto(home_url);
     const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/a[1]");
     await EnvantoVerify(page, EnvantoVerifyLocator);
+})
+
+test("Home Book a quick call", async ({ page }) => {
+    await page.goto(home_url);
+    const EnvantoVerifyLocator = page.locator("//a[contains(text(),'Book a quick call.')]");
+    await BookcallVerify(page, EnvantoVerifyLocator);
 })
 
 test("Home Explore Customer App", async ({ page }) => {
@@ -55,6 +61,20 @@ test("Home Explore Admin Panel", async ({ page }) => {
     const newPageUrl = page.url();
     expect(newPageUrl).toBe("https://kivilabs.iqonic.design/product/admin-panel/");
 });
+
+test("Home Book a quick call 2", async ({ page }) => {
+    await page.goto(home_url);
+    const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    await EnvantoVerifyLocator.scrollIntoViewIfNeeded();
+    await BookcallVerify(page, EnvantoVerifyLocator);
+})
+
+test("Home Book a quick call 3", async ({ page }) => {
+    await page.goto(home_url);
+    const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[9]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]");
+    await EnvantoVerifyLocator.scrollIntoViewIfNeeded();
+    await BookcallVerify(page, EnvantoVerifyLocator);
+})
 
 test("Home Buy now", async ({ page }) => {
     await page.goto(home_url);
@@ -97,6 +117,13 @@ test("Home Buy Sevice", async ({ page }) => {
     expect(newPageUrl).toBe("https://service.iqonic.design/services/kivilabs-lab-management-app/");
     return newPage;
 });
+
+test("Home Book a quick call 4", async ({ page }) => {
+    await page.goto(home_url);
+    const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[15]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]");
+    await EnvantoVerifyLocator.scrollIntoViewIfNeeded();
+    await BookcallVerify(page, EnvantoVerifyLocator);
+})
 
 test("Home Try Demo", async ({ page }) => {
     await page.goto(home_url);

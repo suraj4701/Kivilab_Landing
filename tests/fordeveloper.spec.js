@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { EnvantoVerify, TrustpilotVerify, UserAppAppstore } from './common';
+import { BookcallVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore } from './common';
 const home_url = process.env.HOME_URL;
 
 test("For Developer Trustpilot Verify", async ({ page }) => {
@@ -16,6 +16,14 @@ test("For Developer Envanto Verify", async ({ page }) => {
     await page.locator("//li[@id='menu-item-830']").click();
     const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[1]");
     await EnvantoVerify(page, EnvantoVerifyLocator);
+})
+
+test("For Developer Book a quick call", async ({ page }) => {
+    await page.goto(home_url);
+    await page.locator("//li[@id='menu-item-828']").hover()
+    await page.locator("//li[@id='menu-item-830']").click();
+    const EnvantoVerifyLocator = page.locator("//a[contains(text(),'Book a quick call.')]");
+    await BookcallVerify(page, EnvantoVerifyLocator);
 })
 
 test("For Developer User App Appstore", async ({ page }) => {
@@ -41,4 +49,12 @@ test("For Medical Professional Envanto Verify", async ({ page }) => {
     await page.locator("//li[@id='menu-item-829']").click();
     const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[1]");
     await EnvantoVerify(page, EnvantoVerifyLocator);
+})
+
+test("For Medical Professional Book a quick call", async ({ page }) => {
+    await page.goto(home_url);
+    await page.locator("//li[@id='menu-item-828']").hover()
+    await page.locator("//li[@id='menu-item-829']").click();
+    const EnvantoVerifyLocator = page.locator("//a[contains(text(),'Book a quick call.')]");
+    await BookcallVerify(page, EnvantoVerifyLocator);
 })
