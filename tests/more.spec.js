@@ -60,7 +60,7 @@ test("More Explore Now Envanto Verify", async ({ page }) => {
     await EnvantoVerify(newPage, EnvantoVerifyLocator);
 })
 
-test.only("More Explore Now Book a quick call", async ({ page }) => {
+test("More Explore Now Book a quick call", async ({ page }) => {
     await page.goto(home_url);
     const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
 
