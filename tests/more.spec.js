@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { AdminPanelVerify, BookcallVerify, CollectorAppAppstore, CollectorAppPlaystore, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
-test("More Docs", async ({ page }) => {
+test("More Hire Us", async ({ page }) => {
     await page.goto(home_url);
     const Docs = page.locator("//li[@id='menu-item-837']")
 
@@ -26,17 +26,16 @@ test("More Book Demo Call", async ({ page }) => {
     expect(newPageUrl).toBe("https://tidycal.com/iqonicdesign/kivilabs-demo-call");
 })
 
-test("Customer app Trustpilot Verify", async ({ page }) => {
+test("More Buy Now", async ({ page }) => {
     await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-831']").hover()
-    await page.locator("//li[@id='menu-item-833']").click();
-    const TrustpilotVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/a[1]");
-    await TrustpilotVerify(page, TrustpilotVerifyLocator);
+    const Locator = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]");
+    await Locator.scrollIntoViewIfNeeded();
+    await EnvantoKivilabVerify(page, Locator);
 })
 
 test("More Explore Now Trustpilot Verify", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -49,7 +48,7 @@ test("More Explore Now Trustpilot Verify", async ({ page }) => {
 
 test("More Explore Now Envanto Verify", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -62,7 +61,7 @@ test("More Explore Now Envanto Verify", async ({ page }) => {
 
 test("More Explore Now Book a quick call", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -75,7 +74,7 @@ test("More Explore Now Book a quick call", async ({ page }) => {
 
 test("More Explore Now User App Playstore", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -88,7 +87,7 @@ test("More Explore Now User App Playstore", async ({ page }) => {
 
 test("More Explore Now User App Appstore", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -102,7 +101,7 @@ test("More Explore Now User App Appstore", async ({ page }) => {
 
 test("More Explore Now Collector App Playstore", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -115,7 +114,7 @@ test("More Explore Now Collector App Playstore", async ({ page }) => {
 
 test("More Explore Now Collector App Appstore", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -128,7 +127,7 @@ test("More Explore Now Collector App Appstore", async ({ page }) => {
 
 test("More Explore Now AdminPanel", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -142,7 +141,7 @@ test("More Explore Now AdminPanel", async ({ page }) => {
 
 test("More Explore Now ContactUs", async ({ page }) => {
     await page.goto(home_url);
-    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]")
+    const Docs = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]")
 
     const [newPage] = await Promise.all([
         page.context().waitForEvent('page'),
@@ -157,11 +156,4 @@ test("More Explore Now ContactUs", async ({ page }) => {
     ])
     const newPageUrl = newPage1.url();
     expect(newPageUrl).toBe("https://iqonic.tech/contact-us/");
-})
-
-test("More Buy Now", async ({ page }) => {
-    await page.goto(home_url);
-    const Locator = page.locator("//header/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/a[1]");
-    await Locator.scrollIntoViewIfNeeded();
-    await EnvantoKivilabVerify(page, Locator);
 })
