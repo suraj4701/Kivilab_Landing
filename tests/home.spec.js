@@ -97,6 +97,13 @@ test("Home Buy now 3", async ({ page }) => {
     await EnvantoKivilabVerify(page, EnvantoKivicareVerifyLocator);
 })
 
+test("Home Book a quick call 4", async ({ page }) => {
+    await page.goto(home_url);
+    const EnvantoVerifyLocator = page.locator("//a[normalize-space()='Talk to a Product Expert']");
+    await EnvantoVerifyLocator.scrollIntoViewIfNeeded();
+    await BookcallVerify(page, EnvantoVerifyLocator);
+})
+
 test("Home Buy Regular", async ({ page }) => {
     await page.goto(home_url);
     const EnvantoKivicareVerifyLocator = page.locator("//a[contains(text(),'Buy Regular')]");
@@ -117,13 +124,6 @@ test("Home Buy Sevice", async ({ page }) => {
     expect(newPageUrl).toBe("https://service.iqonic.design/services/kivilabs-lab-management-app/");
     return newPage;
 });
-
-test("Home Book a quick call 4", async ({ page }) => {
-    await page.goto(home_url);
-    const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[15]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]");
-    await EnvantoVerifyLocator.scrollIntoViewIfNeeded();
-    await BookcallVerify(page, EnvantoVerifyLocator);
-})
 
 test("Home Try Demo", async ({ page }) => {
     await page.goto(home_url);
