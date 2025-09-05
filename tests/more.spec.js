@@ -23,7 +23,7 @@ test("More Book Demo Call", async ({ page }) => {
         Docs.click()
     ])
     const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://tidycal.com/iqonicdesign/kivilabs-demo-call");
+    expect(newPageUrl).toBe("https://kivilabs.iqonic.design/kivilabs-demo-call/");
 })
 
 test("More Buy Now", async ({ page }) => {
