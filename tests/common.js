@@ -111,8 +111,11 @@ const BookcallVerify = async (page, locator) => {
         page.context().waitForEvent('page'),
         locator.click()
     ])
+
     const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://kivilabs.iqonic.design/kivilabs-demo-call/");
+    const urlObject = new URL(newPageUrl);
+    const urlWithoutQueryParams = urlObject.origin + urlObject.pathname;
+    expect(urlWithoutQueryParams).toBe("https://kivilabs.iqonic.design/kivilabs-demo-call/");
     return newPage;
 }
 

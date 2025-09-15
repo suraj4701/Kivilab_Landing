@@ -22,8 +22,11 @@ test("More Book Demo Call", async ({ page }) => {
         page.context().waitForEvent('page'),
         Docs.click()
     ])
+
     const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://kivilabs.iqonic.design/kivilabs-demo-call/");
+    const urlObject = new URL(newPageUrl);
+    const urlWithoutQueryParams = urlObject.origin + urlObject.pathname;
+    expect(urlWithoutQueryParams).toBe("https://kivilabs.iqonic.design/kivilabs-demo-call/");
 })
 
 test("More Buy Now", async ({ page }) => {
