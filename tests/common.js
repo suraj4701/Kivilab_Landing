@@ -101,7 +101,7 @@ const EnvantoKivilabVerify = async (page, locator) => {
     ])
     const iqonicDesignSpanLocator = newPage.locator("//body/div[1]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/h1[1]");
     const verifytext = await iqonicDesignSpanLocator.textContent();
-    expect(verifytext).toContain('KiviLabs - All-in-One Lab Management & Test Booking Solution with Multi-Vendor Support');
+    expect(verifytext).toContain('KiviLabs - Complete Laboratory Management System (Test Booking Solution with Multi-Vendor Support)');
     return newPage;
 }
 
