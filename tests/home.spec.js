@@ -270,7 +270,7 @@ test("Home Footer Get A Quote", async ({ page }) => {
         facebookLinkLocator.click()
     ])
     const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://iqonic.tech/cost-calculator/");
+    expect(newPageUrl).toBe("https://iqonic.tech/ai-cost-calculator/");
 })
 
 test("Home Footer License", async ({ page }) => {
