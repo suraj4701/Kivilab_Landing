@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { BookcallVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore } from './common';
+import { BookcallVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
 test("For Developer Trustpilot Verify", async ({ page }) => {
@@ -26,11 +26,20 @@ test("For Developer Book a quick call", async ({ page }) => {
     await BookcallVerify(page, EnvantoVerifyLocator);
 })
 
+test("For Developer User App Playstore", async ({ page }) => {
+    await page.goto(home_url);
+    await page.locator("//li[@id='menu-item-828']").hover()
+    await page.locator("//li[@id='menu-item-830']").click();
+    const adminpanelLocator = page.locator("//img[@title='kl_gplay']");
+    await adminpanelLocator.scrollIntoViewIfNeeded();
+    await UserAppPlaystore(page, adminpanelLocator);
+})
+
 test("For Developer User App Appstore", async ({ page }) => {
     await page.goto(home_url);
     await page.locator("//li[@id='menu-item-828']").hover()
     await page.locator("//li[@id='menu-item-830']").click();
-    const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[6]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[1]/a[1]");
+    const adminpanelLocator = page.locator("//img[@title='kl_apstore']");
     await adminpanelLocator.scrollIntoViewIfNeeded();
     await UserAppAppstore(page, adminpanelLocator);
 })

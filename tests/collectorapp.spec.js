@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { BookcallVerify, CollectorAppPlaystore, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify } from './common';
+import { BookcallVerify, CollectorAppPlaystore, CommonLinkVerify, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify } from './common';
 const home_url = process.env.HOME_URL;
 
 test("Collector app Buy Now", async ({ page }) => {
@@ -75,6 +75,16 @@ test("Collector app View Demo 4", async ({ page }) => {
     const adminpanelLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[7]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/a[1]");
     await adminpanelLocator.scrollIntoViewIfNeeded();
     await CollectorAppPlaystore(page, adminpanelLocator);
+})
+
+test("Collector app phlebotomy app", async ({ page }) => {
+    await page.goto(home_url);
+    await page.locator("//li[@id='menu-item-831']").hover()
+    await page.locator("//li[@id='menu-item-833']").click();
+    const adminpanelLocator = page.locator("//span[normalize-space()='phlebotomy app']");
+    await adminpanelLocator.scrollIntoViewIfNeeded();
+    const expectedLink = "https://kivilabs.iqonic.design/product/collector-app/";
+    await CommonLinkVerify(page, adminpanelLocator, expectedLink);
 })
 
 test("Collector app View Demo 5", async ({ page }) => {

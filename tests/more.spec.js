@@ -1,32 +1,19 @@
-import { expect, test } from '@playwright/test';
-import { AdminPanelVerify, BookcallVerify, CollectorAppAppstore, CollectorAppPlaystore, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore, UserAppPlaystore } from './common';
+import { test } from '@playwright/test';
+import { AdminPanelVerify, BookcallVerify, CollectorAppAppstore, CollectorAppPlaystore, CommonLinkVerify, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
 test("More Hire Us", async ({ page }) => {
     await page.goto(home_url);
     const Docs = page.locator("//li[@id='menu-item-837']")
-
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        Docs.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://iqonic.tech/healthcare/");
+    const expectedLink = "https://iqonic.tech/healthcare/";
+    await CommonLinkVerify(page, Docs, expectedLink);
 })
 
 test("More Book Demo Call", async ({ page }) => {
     await page.goto(home_url);
     const Docs = page.locator("//li[@id='menu-item-1200']")
-
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        Docs.click()
-    ])
-
-    const newPageUrl = newPage.url();
-    const urlObject = new URL(newPageUrl);
-    const urlWithoutQueryParams = urlObject.origin + urlObject.pathname;
-    expect(urlWithoutQueryParams).toBe("https://kivilabs.iqonic.design/kivilabs-demo-call/");
+    const expectedLink = "https://kivilabs.iqonic.design/kivilabs-demo-call/";
+    await CommonLinkVerify(page, Docs, expectedLink);
 })
 
 test("More Buy Now", async ({ page }) => {
@@ -152,11 +139,6 @@ test("More Explore Now ContactUs", async ({ page }) => {
     ])
 
     const adminpanelLocator = newPage.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[3]/div[1]/div[3]/div[2]/div[3]/div[1]/div[1]/div[1]/a[1]");
-
-    const [newPage1] = await Promise.all([
-        newPage.context().waitForEvent('page'),
-        adminpanelLocator.click()
-    ])
-    const newPageUrl = newPage1.url();
-    expect(newPageUrl).toBe("https://iqonic.tech/contact-us/");
+    const expectedLink = "https://iqonic.tech/contact-us/";
+    await CommonLinkVerify(page, adminpanelLocator, expectedLink);
 })

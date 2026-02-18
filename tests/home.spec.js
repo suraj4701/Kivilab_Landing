@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { AdminPanelVerify, BookcallVerify, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppPlaystore } from './common';
+import { AdminPanelVerify, BookcallVerify, CommonLinkVerify, EnvantoKivilabVerify, EnvantoVerify, TrustpilotVerify, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
 test("Home User App Playstore", async ({ page }) => {
@@ -143,48 +143,32 @@ test("Facebook link verify", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/span[1]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://www.facebook.com/iqonicdesign");
+    const expectedLink = "https://www.facebook.com/iqonicdesign";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("YouTube link verify", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/span[2]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://www.youtube.com/iqonicdesign");
+    const expectedLink = "https://www.youtube.com/iqonicdesign";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("X Twitter link verify", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/span[3]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://x.com/iqonicdesign");
+    const expectedLink = "https://x.com/iqonicdesign";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("Instagram link verify", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/span[4]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://www.instagram.com/iqonicdesign/");
+    const expectedLink = "https://www.instagram.com/iqonicdesign/";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("Home Footer Customer App", async ({ page }) => {
@@ -231,12 +215,8 @@ test("Home Footer Docs", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/ul[1]/li[2]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://documentation.iqonic.design/kivilab-laravel/");
+    const expectedLink = "https://documentation.iqonic.design/kivilab-laravel/";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("Home Footer Pricing", async ({ page }) => {
@@ -253,58 +233,38 @@ test("Home Footer Support", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/ul[1]/li[1]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://iqonic.desky.support/");
+    const expectedLink = "https://iqonic.desky.support/";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("Home Footer Get A Quote", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/ul[1]/li[2]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://iqonic.tech/ai-cost-calculator/");
+    const expectedLink = "https://iqonic.tech/software-development-cost-calculator/";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("Home Footer License", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/ul[1]/li[3]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://iqonic.design/licensing-terms-more/#licenses");
+    const expectedLink = "https://iqonic.design/licensing-terms-more/";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("Home Footer Hire Us", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//body/div[@id='main-container']/footer[@id='footer']/div[1]/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[2]/div[1]/ul[1]/li[4]/a[1]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://iqonic.tech/healthcare/");
+    const expectedLink = "https://iqonic.tech/healthcare/";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
 
 test("Home Footer Iqonic Design", async ({ page }) => {
     await page.goto(home_url);
     const facebookLinkLocator = page.locator("//a[contains(text(),'Iqonic Design.')]");
     await facebookLinkLocator.scrollIntoViewIfNeeded()
-    const [newPage] = await Promise.all([
-        page.context().waitForEvent('page'),
-        facebookLinkLocator.click()
-    ])
-    const newPageUrl = newPage.url();
-    expect(newPageUrl).toBe("https://iqonic.design/");
+    const expectedLink = "https://iqonic.design/";
+    await CommonLinkVerify(page, facebookLinkLocator, expectedLink);
 })
