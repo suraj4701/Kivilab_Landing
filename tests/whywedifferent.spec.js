@@ -2,68 +2,63 @@ import { test } from '@playwright/test';
 import { BookcallVerify, EnvantoVerify, TrustpilotVerify, UserAppAppstore, UserAppPlaystore } from './common';
 const home_url = process.env.HOME_URL;
 
-test("For Developer Trustpilot Verify", async ({ page }) => {
-    await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-828']").hover()
-    await page.locator("//li[@id='menu-item-830']").click();
-    const TrustpilotVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]");
-    await TrustpilotVerify(page, TrustpilotVerifyLocator);
-})
+test.describe("Role Based Verifications", () => {
+    test.beforeEach(async ({ page }) => {
+        await page.goto(home_url);
+        await page.locator("//li[@id='menu-item-828']").hover();
+    });
 
-test("For Developer Envanto Verify", async ({ page }) => {
-    await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-828']").hover()
-    await page.locator("//li[@id='menu-item-830']").click();
-    const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[1]");
-    await EnvantoVerify(page, EnvantoVerifyLocator);
-})
+    test.describe("For Developer", () => {
+        test.beforeEach(async ({ page }) => {
+            await page.locator("//li[@id='menu-item-830']").click();
+        });
 
-test("For Developer Book a quick call", async ({ page }) => {
-    await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-828']").hover()
-    await page.locator("//li[@id='menu-item-830']").click();
-    const EnvantoVerifyLocator = page.locator("//a[contains(text(),'Book a quick call.')]");
-    await BookcallVerify(page, EnvantoVerifyLocator);
-})
+        test("Trustpilot Verify", async ({ page }) => {
+            const locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]");
+            await TrustpilotVerify(page, locator);
+        });
 
-test("For Developer User App Playstore", async ({ page }) => {
-    await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-828']").hover()
-    await page.locator("//li[@id='menu-item-830']").click();
-    const adminpanelLocator = page.locator("//img[@title='kl_gplay']");
-    await adminpanelLocator.scrollIntoViewIfNeeded();
-    await UserAppPlaystore(page, adminpanelLocator);
-})
+        test("Envanto Verify", async ({ page }) => {
+            const locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[1]");
+            await EnvantoVerify(page, locator);
+        });
 
-test("For Developer User App Appstore", async ({ page }) => {
-    await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-828']").hover()
-    await page.locator("//li[@id='menu-item-830']").click();
-    const adminpanelLocator = page.locator("//img[@title='kl_apstore']");
-    await adminpanelLocator.scrollIntoViewIfNeeded();
-    await UserAppAppstore(page, adminpanelLocator);
-})
+        test("Book a quick call", async ({ page }) => {
+            const locator = page.locator("//a[contains(text(),'Book a quick call.')]");
+            await BookcallVerify(page, locator);
+        });
 
-test("For Medical Professional Trustpilot Verify", async ({ page }) => {
-    await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-828']").hover()
-    await page.locator("//li[@id='menu-item-829']").click();
-    const TrustpilotVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]");
-    await TrustpilotVerify(page, TrustpilotVerifyLocator);
-})
+        test("User App Playstore", async ({ page }) => {
+            const locator = page.locator("//img[@title='kl_gplay']");
+            await locator.scrollIntoViewIfNeeded();
+            await UserAppPlaystore(page, locator);
+        });
 
-test("For Medical Professional Envanto Verify", async ({ page }) => {
-    await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-828']").hover()
-    await page.locator("//li[@id='menu-item-829']").click();
-    const EnvantoVerifyLocator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[1]");
-    await EnvantoVerify(page, EnvantoVerifyLocator);
-})
+        test("User App Appstore", async ({ page }) => {
+            const locator = page.locator("//img[@title='kl_apstore']");
+            await locator.scrollIntoViewIfNeeded();
+            await UserAppAppstore(page, locator);
+        });
+    });
 
-test("For Medical Professional Book a quick call", async ({ page }) => {
-    await page.goto(home_url);
-    await page.locator("//li[@id='menu-item-828']").hover()
-    await page.locator("//li[@id='menu-item-829']").click();
-    const EnvantoVerifyLocator = page.locator("//a[contains(text(),'Book a quick call.')]");
-    await BookcallVerify(page, EnvantoVerifyLocator);
-})
+    test.describe("For Medical Professional", () => {
+        test.beforeEach(async ({ page }) => {
+            await page.locator("//li[@id='menu-item-829']").click();
+        });
+
+        test("Trustpilot Verify", async ({ page }) => {
+            const locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]");
+            await TrustpilotVerify(page, locator);
+        });
+
+        test("Envanto Verify", async ({ page }) => {
+            const locator = page.locator("//body/div[@id='main-container']/main[@id='main']/div[1]/article[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/a[1]");
+            await EnvantoVerify(page, locator);
+        });
+
+        test("Book a quick call", async ({ page }) => {
+            const locator = page.locator("//a[contains(text(),'Book a quick call.')]");
+            await BookcallVerify(page, locator);
+        });
+    });
+});
