@@ -36,7 +36,7 @@ const UserAppAppstore = async (page, locator) => {
     ])
     const newPageUrl = newPage.url();
     expect(newPageUrl).toBe("https://apps.apple.com/us/app/kivilabs/id6743613222");
-    const trustpilotLocator = newPage.locator("//h1[@class='svelte-1bm25t']");
+    const trustpilotLocator = newPage.locator("//h1[normalize-space()='KiviLabs']");
     const verifytext = await trustpilotLocator.textContent();
     expect(verifytext).toContain('KiviLabs');
     return newPage;
@@ -50,7 +50,7 @@ const CollectorAppAppstore = async (page, locator) => {
     ])
     const newPageUrl = newPage.url();
     expect(newPageUrl).toBe("https://apps.apple.com/us/app/kivilabs-collector/id6743615473");
-    const trustpilotLocator = newPage.locator("//h1[@class='svelte-1bm25t']");
+    const trustpilotLocator = newPage.locator("//h1[normalize-space()='KiviLabs Collector']");
     const verifytext = await trustpilotLocator.textContent();
     expect(verifytext).toContain('KiviLabs Collector');
     return newPage;
